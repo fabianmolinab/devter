@@ -1,6 +1,7 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import type { NextPage } from 'next'
+import Head from 'next/head'
+import Link from 'next/link'
+import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   return (
@@ -15,9 +16,10 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Hola soy <a href="https://nextjs.org">Fabian Molina!</a>
         </h1>
+        <Link href="/timeline"> Time Line</Link>
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
