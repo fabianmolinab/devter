@@ -1,5 +1,6 @@
 {
   "name": "devter",
+  "description": "App clone the Twitter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
