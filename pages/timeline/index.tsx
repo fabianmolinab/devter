@@ -3,13 +3,13 @@ import Link from 'next/link'
 import styles from '../../styles/Home.module.css'
 
 interface Props {
-  username: string
+  userName: string
 }
 
-const TimeLine: NextPage<Props> = ({ username }) => {
+const TimeLine: NextPage<Props> = ({ userName }) => {
   return (
     <>
-      <h1>Time Line is {username}</h1>
+      <h1>Time Line is {userName}</h1>
       <p>Aqui van los tuits</p>
       <Link href="/" >
         <a className={styles.title}>Home</a>
@@ -17,9 +17,11 @@ const TimeLine: NextPage<Props> = ({ username }) => {
     </>
   )
 }
+
 // Añade al servidor las props que va utilizar el componente
-TimeLine.getInitialProps = () => {
-  return { username: '@fabianmolinab' }
+TimeLine.getInitialProps = async () => {
+  return fetch('http://localhost:3000/api/hello')
+    .then(res => res.json())
 }
 
 export default TimeLine
